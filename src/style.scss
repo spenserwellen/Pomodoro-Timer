@@ -1,0 +1,250 @@
+@import url("https://fonts.googleapis.com/css2?family=Lemonada:wght@300;400;500;515;600;700&display=swap");
+
+$font-family: "Lemonada", cursive; // The font-family for the whole app
+$titlesize: 6.5rem; // The size of the title
+$titleweight: 400; // The weight of the title for this app
+$adj-weight: 650; // The weight of the adjustment descriptions
+$btn-weight: 600; // The weight of the buttoms at the very bottom
+$btn-size: 1.75em; // Size of the three bottom buttons
+
+$white: hsl(230deg, 6%, 18%); // actually black
+$background: hsl(249deg, 8%, 83%); // actually white
+
+html {
+  overflow: roll;
+}
+
+body {
+  background: url("https://i.imgur.com/inQZ4dJ.jpg") no-repeat center center
+    fixed;
+  background-size: cover;
+}
+.pomodoro {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 35vw;
+  height: 100vh;
+  padding-top: 15px;
+  padding-bottom: 25px;
+  color: $background;
+}
+p {
+  text-align: center;
+  text-shadow: 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
+}
+.flip-clock-wrapper {
+  max-width: 460px;
+  margin: 3em auto 2em;
+  display: flex;
+  justify-content: center;
+}
+.flip-clock-label {
+  visibility: hidden;
+}
+.col-md-4 {
+  display: flex;
+  justify-content: center;
+}
+.col-md-2 {
+  display: flex;
+  justify-content: center;
+  height: 34px;
+  align-items: center;
+  text-shadow: 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
+}
+.counter {
+  display: flex;
+  justify-content: center;
+}
+.container {
+  width: 31.25em;
+}
+.middle {
+  display: inline-block;
+}
+#btns {
+  display: flex;
+  justify-content: center;
+  padding-top: 6vh;
+  padding-bottom: 3vh;
+}
+#stop {
+  margin-left: 0.625em;
+  margin-right: 0.625em;
+}
+.btn {
+  background-color: $background;
+  color: $white;
+  font-family: $font-family;
+  font-weight: $btn-weight;
+  font-size: $btn-size;
+  border-radius: 1.75rem;
+  box-shadow: 0 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.2),
+    0 0.75rem 1rem 0 rgba(0, 0, 0, 0.19);
+  text-shadow: 0.125rem 0.25rem rgba(0, 0, 0, 0.2);
+}
+#sessInc,
+#sessDec,
+#breakInc,
+#breakDec {
+  font-weight: bold;
+  font-family: Arial;
+  font-size: 1.5em;
+  font-weight: 1000;
+}
+#stats {
+  background: none;
+
+  border-radius: 10px;
+  color: $background;
+  font-family: $font-family;
+  font-weight: $titleweight;
+  font-size: $titlesize;
+  text-align: center;
+  text-shadow: 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
+}
+#statRow {
+  display: flex;
+  justify-content: center;
+  margin-top: 3vh;
+  padding-bottom: 3vh;
+  text-transform: capitalize;
+}
+
+#clock {
+  position: center;
+  margin-top: 3em;
+  margin-bottom: 3em;
+  vertical-align: middle !important;
+}
+
+#adj {
+  margin-bottom: 4rem;
+  font-family: $font-family;
+  font-weight: $adj-weight;
+  text-shadow: 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
+}
+
+#buttons {
+  position: relative;
+  left: 0;
+  bottom: 0;
+  height: 30vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+/*
+// Flip-Clock Wrapper Stuff
+.flip-clock-wrapper ul {
+  background: $white;
+  height: 15rem;
+  width: 20rem;
+}
+
+.flip-clock-wrapper ul li a div.up:after {
+  background-color: red;
+  position: sticky;
+  top: -10px;
+}
+
+.flip-clock-wrapper ul li a div div.inn {
+  color: yellow;
+  text-shadow: 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.2),
+    0 0.75rem 1rem 0 rgba(0, 0, 0, 0.19);
+  background-color: green;
+  padding: 3rem;
+}
+*/
+
+//
+// ------------------------- FlipClock
+//
+$clock-flip-font-size: 10rem;
+$clock-flip-border-radius: 1.2rem;
+$clock-digit-gap: 10rem;
+$clock-dot-size: 1.5rem;
+
+$clock-height: calc($clock-flip-font-size * 1.2);
+$clock-flip-width: calc($clock-flip-font-size * 0.8);
+$clock-flip-margin: calc($clock-digit-gap / 2);
+$clock-flip-section-width: calc(
+  2 * ($clock-flip-width + 2 * $clock-flip-margin)
+);
+
+$clock-flip-bg: $background;
+$clock-flip-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+$clock-flip-font-color: $white;
+$clock-flip-font-shadow: 0 1px 2px #000;
+
+#clock {
+}
+
+.timer.flip-clock-wrapper ul {
+  height: $clock-height;
+  margin: 0 $clock-flip-margin;
+  width: $clock-flip-width;
+  box-shadow: $clock-flip-shadow;
+}
+.timer.flip-clock-wrapper ul li {
+  line-height: $clock-height;
+}
+.timer.flip-clock-wrapper ul li a div div.inn {
+  background-color: $clock-flip-bg;
+  color: $clock-flip-font-color;
+  font-size: $clock-flip-font-size;
+  text-shadow: $clock-flip-font-shadow;
+}
+.timer.flip-clock-wrapper ul,
+.timer.flip-clock-wrapper ul li a div div.inn {
+  border-radius: $clock-flip-border-radius;
+}
+.timer.flip-clock-wrapper ul li a div.down {
+  border-bottom-left-radius: $clock-flip-border-radius;
+  border-bottom-right-radius: $clock-flip-border-radius;
+}
+.timer.flip-clock-wrapper ul li a div.up:after {
+  top: calc(($clock-height / 2) - 1px);
+}
+.timer .flip-clock-dot.top {
+  top: ($clock-height / 2 - $clock-flip-font-size * 0.2 - $clock-dot-size / 2);
+}
+.timer .flip-clock-dot.bottom {
+  top: ($clock-height / 2 + $clock-flip-font-size * 0.2 - $clock-dot-size / 2);
+}
+.timer .flip-clock-dot {
+  height: $clock-dot-size;
+  left: $clock-dot-size;
+  width: $clock-dot-size;
+  background: $clock-flip-bg;
+}
+.timer .flip-clock-divider {
+  height: $clock-height;
+  width: ($clock-dot-size * 3);
+}
+.timer .flip-clock-divider.seconds .flip-clock-label,
+.timer .flip-clock-divider.minutes .flip-clock-label {
+  right: calc(-1 * $clock-flip-section-width);
+}
+.timer .flip-clock-divider .flip-clock-label {
+  color: $clock-flip-font-color;
+  font-size: calc($clock-flip-font-size / 4);
+  width: calc(2 * $clock-flip-width + 4 * $clock-flip-margin);
+}
+.flip-clock-wrapper ul li a div div.inn {
+  text-shadow: 0.125rem 0.25rem rgba(0, 0, 0, 0.2) !important;
+  box-shadow: 0 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.2),
+    0 0.75rem 1rem 0 rgba(0, 0, 0, 0.19) !important;
+}
+.flip-clock-divider.minutes {
+  display: none !important;
+}
+#clock {
+  zoom: 1.8;
+}
+//
+// ------------------------- FlipClock
+//
